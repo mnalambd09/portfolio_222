@@ -1,0 +1,78 @@
+:root {
+    --primary-color: #6366f1;
+    --secondary-color: #a855f7;
+    --bg-dark: #0f172a;
+    --glass-bg: rgba(255, 255, 255, 0.05);
+    --text-light: #f8fafc;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; scroll-behavior: smooth; }
+
+body {
+    font-family: 'Poppins', 'Hind Siliguri', sans-serif;
+    background-color: var(--bg-dark);
+    color: var(--text-light);
+    overflow-x: hidden;
+    cursor: none;
+}
+
+/* Background Effects */
+.circle { position: fixed; width: 300px; height: 300px; filter: blur(100px); z-index: -1; border-radius: 50%; opacity: 0.3; }
+.circle-1 { background: var(--primary-color); top: -50px; left: -50px; }
+.circle-2 { background: var(--secondary-color); bottom: -50px; right: -50px; }
+
+/* Custom Cursor */
+.cursor { width: 20px; height: 20px; border: 2px solid var(--primary-color); border-radius: 50%; position: fixed; pointer-events: none; z-index: 9999; transition: transform 0.1s ease; background: rgba(99, 102, 241, 0.2); }
+
+/* Navigation */
+nav { display: flex; justify-content: space-between; align-items: center; padding: 20px 8%; position: fixed; width: 100%; top: 0; z-index: 1000; backdrop-filter: blur(15px); border-bottom: 1px solid rgba(255, 255, 255, 0.1); }
+.nav-links { display: flex; list-style: none; }
+.nav-links li { margin-left: 30px; }
+.nav-links a { text-decoration: none; color: white; transition: 0.3s; }
+.nav-links a:hover { color: var(--primary-color); }
+
+/* Hero & General Sections */
+section { padding: 100px 8%; }
+.hero-container { display: flex; align-items: center; justify-content: center; flex-wrap: wrap; gap: 40px; }
+.hero-text { flex: 1; min-width: 320px; }
+.hero-animation { flex: 1; min-width: 320px; display: flex; justify-content: center; }
+.hero-text h1 { font-size: 3rem; line-height: 1.2; margin-bottom: 20px; }
+.typing-text { color: var(--secondary-color); border-bottom: 2px solid var(--secondary-color); }
+
+/* Lottie Icons in Services */
+.lottie-icon { width: 100px; height: 100px; margin: 0 auto 20px; }
+
+/* Glass Cards */
+.grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px; }
+.glass-card { background: var(--glass-bg); padding: 40px; border-radius: 25px; border: 1px solid rgba(255, 255, 255, 0.1); text-align: center; transition: 0.4s; }
+.glass-card:hover { transform: translateY(-15px); background: rgba(255, 255, 255, 0.1); box-shadow: 0 20px 40px rgba(0,0,0,0.3); }
+
+/* Buttons */
+.btn { padding: 12px 35px; border-radius: 50px; text-decoration: none; font-weight: 600; transition: 0.3s; display: inline-block; }
+.btn-primary { background: var(--primary-color); color: white; }
+.btn-outline { border: 2px solid var(--primary-color); color: white; margin-left: 10px; }
+
+/* Timeline */
+.timeline { position: relative; max-width: 800px; margin: 0 auto; border-left: 2px solid var(--primary-color); padding-left: 30px; }
+.timeline-item { margin-bottom: 40px; position: relative; }
+.timeline-content { background: var(--glass-bg); padding: 20px; border-radius: 15px; border: 1px solid rgba(255,255,255,0.1); }
+
+/* Progress Bar */
+.skill-box { margin-bottom: 25px; }
+.bar { background: rgba(255,255,255,0.1); height: 10px; border-radius: 10px; overflow: hidden; margin-top: 10px; }
+.progress { background: linear-gradient(90deg, var(--primary-color), var(--secondary-color)); height: 100%; border-radius: 10px; }
+
+/* Contact Form */
+.contact-form { flex: 1; background: var(--glass-bg); padding: 40px; border-radius: 25px; border: 1px solid rgba(255,255,255,0.1); }
+.contact-form input, .contact-form textarea { width: 100%; padding: 15px; margin-bottom: 15px; background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); border-radius: 12px; color: white; outline: none; }
+
+footer { text-align: center; padding: 40px; border-top: 1px solid rgba(255,255,255,0.1); }
+
+/* Responsive */
+@media (max-width: 768px) {
+    .nav-links { display: none; }
+    .hero-text { text-align: center; }
+    .btn-outline { margin: 10px 0 0 0; }
+    .cursor { display: none; }
+    body { cursor: auto; }
+}

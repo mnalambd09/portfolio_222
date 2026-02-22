@@ -3,197 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Premium Portfolio | Modern Design</title>
+    <title>Pro Animated Portfolio</title>
     
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@300;500;700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
     
-    <!-- Font Awesome for Icons -->
+    <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
-    <!-- AOS Animation Library -->
+    <!-- AOS CSS -->
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-
-    <style>
-        :root {
-            --primary-color: #6366f1;
-            --secondary-color: #a855f7;
-            --bg-dark: #0f172a;
-            --glass-bg: rgba(255, 255, 255, 0.05);
-            --text-light: #f8fafc;
-        }
-
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            scroll-behavior: smooth;
-        }
-
-        body {
-            font-family: 'Poppins', 'Hind Siliguri', sans-serif;
-            background-color: var(--bg-dark);
-            color: var(--text-light);
-            overflow-x: hidden;
-            cursor: none; /* কাস্টম কার্সারের জন্য মেইন কার্সার হাইড */
-        }
-
-        /* Custom Cursor */
-        .cursor {
-            width: 20px;
-            height: 20px;
-            border: 2px solid var(--primary-color);
-            border-radius: 50%;
-            position: fixed;
-            pointer-events: none;
-            z-index: 9999;
-            transition: transform 0.1s ease;
-            background: rgba(99, 102, 241, 0.2);
-        }
-
-        /* Background Animated Circles */
-        .circle {
-            position: fixed;
-            width: 300px;
-            height: 300px;
-            filter: blur(80px);
-            z-index: -1;
-            border-radius: 50%;
-            opacity: 0.4;
-        }
-        .circle-1 { background: var(--primary-color); top: -50px; left: -50px; }
-        .circle-2 { background: var(--secondary-color); bottom: -50px; right: -50px; }
-
-        /* Navigation */
-        nav {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 20px 8%;
-            position: fixed;
-            width: 100%;
-            top: 0;
-            z-index: 1000;
-            backdrop-filter: blur(15px);
-            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-        }
-
-        .logo { font-size: 1.8rem; font-weight: 700; color: var(--primary-color); }
-        .nav-links { display: flex; list-style: none; }
-        .nav-links li { margin-left: 30px; }
-        .nav-links a { 
-            text-decoration: none; color: white; font-weight: 400; 
-            transition: 0.3s;
-        }
-        .nav-links a:hover { color: var(--primary-color); }
-
-        /* Hero Section */
-        .hero {
-            min-height: 100vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            padding: 80px 8% 0;
-            text-align: left;
-        }
-
-        .hero-container {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            width: 100%;
-            max-width: 1200px;
-            flex-wrap: wrap;
-        }
-
-        .hero-text { flex: 1; min-width: 300px; }
-        .hero-text h1 {
-            font-size: 3.5rem;
-            margin-bottom: 15px;
-            background: linear-gradient(to right, #6366f1, #a855f7);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
-        .hero-text p { font-size: 1.1rem; color: #94a3b8; margin-bottom: 30px; }
-
-        .hero-animation { flex: 1; min-width: 300px; display: flex; justify-content: center; }
-
-        .btn-group { display: flex; gap: 15px; }
-        .btn {
-            padding: 12px 30px;
-            border-radius: 50px;
-            text-decoration: none;
-            font-weight: 600;
-            transition: 0.3s;
-        }
-        .btn-primary { background: var(--primary-color); color: white; }
-        .btn-outline { border: 2px solid var(--primary-color); color: white; }
-
-        /* Skills Progress Bar CSS */
-        .skills-section { padding: 80px 8%; }
-        .skill-box { margin-bottom: 25px; max-width: 600px; margin-inline: auto; }
-        .skill-info { display: flex; justify-content: space-between; margin-bottom: 8px; font-weight: 600; }
-        .bar { 
-            background: rgba(255, 255, 255, 0.1); 
-            height: 12px; 
-            border-radius: 10px; 
-            overflow: hidden; 
-        }
-        .progress { 
-            background: linear-gradient(to right, var(--primary-color), var(--secondary-color)); 
-            height: 100%; 
-            border-radius: 10px;
-            transition: 1.5s ease-in-out;
-        }
-
-        /* Grid System */
-        section { padding: 100px 8%; }
-        .section-title { text-align: center; font-size: 2.5rem; margin-bottom: 50px; }
-        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 25px; }
-
-        .glass-card {
-            background: var(--glass-bg);
-            backdrop-filter: blur(10px);
-            padding: 30px;
-            border-radius: 20px;
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            transition: 0.3s;
-        }
-        .glass-card:hover { transform: translateY(-10px); background: rgba(255, 255, 255, 0.1); }
-        .glass-card i { font-size: 2.5rem; color: var(--primary-color); margin-bottom: 20px; }
-
-        /* Portfolio Image */
-        .portfolio-card { position: relative; border-radius: 20px; overflow: hidden; height: 250px; }
-        .portfolio-card img { width: 100%; height: 100%; object-fit: cover; }
-        .overlay {
-            position: absolute; bottom: 0; left: 0; width: 100%; height: 0;
-            background: linear-gradient(transparent, var(--primary-color));
-            display: flex; align-items: center; justify-content: center;
-            overflow: hidden; transition: 0.5s;
-        }
-        .portfolio-card:hover .overlay { height: 100%; }
-
-        /* Contact Section */
-        .contact-form { max-width: 600px; margin: 0 auto; background: var(--glass-bg); padding: 40px; border-radius: 20px; }
-        .contact-form input, .contact-form textarea {
-            width: 100%; padding: 15px; margin-bottom: 15px;
-            background: rgba(255, 255, 255, 0.05);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            border-radius: 10px; color: white; outline: none;
-        }
-
-        footer { text-align: center; padding: 40px; border-top: 1px solid rgba(255, 255, 255, 0.1); }
-
-        /* Responsive */
-        @media (max-width: 768px) {
-            body { cursor: default; }
-            .cursor { display: none; }
-            .hero-text { text-align: center; }
-            .hero-text h1 { font-size: 2.5rem; }
-            .btn-group { justify-content: center; }
-            .nav-links { display: none; }
-        }
-    </style>
+    
+    <!-- External CSS Link -->
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
@@ -201,13 +23,14 @@
     <div class="circle circle-1"></div>
     <div class="circle circle-2"></div>
 
-    <!-- Nav Bar -->
+    <!-- Navigation -->
     <nav>
-        <div class="logo">PORTFOLIO.</div>
+        <div class="logo">CREATIVE.</div>
         <ul class="nav-links">
             <li><a href="#home">Home</a></li>
             <li><a href="#services">Services</a></li>
             <li><a href="#skills">Skills</a></li>
+            <li><a href="#experience">Experience</a></li>
             <li><a href="#portfolio">Projects</a></li>
             <li><a href="#contact">Contact</a></li>
         </ul>
@@ -217,140 +40,117 @@
     <section class="hero" id="home">
         <div class="hero-container">
             <div class="hero-text" data-aos="fade-right">
-                <h1>হ্যালো, আমি <br><span class="typing-text" style="color: var(--secondary-color);"></span></h1>
-                <p>আমি একজন মডার্ন ফুল-স্ট্যাক ডেভেলপার যারা আপনার ব্যবসার জন্য ডিজিটাল সলিউশন তৈরি করে। লটে অ্যানিমেশন দিয়ে আপনার সাইটকে আরও সুন্দর করছি।</p>
+                <h1>হ্যালো, আমি <br><span class="typing-text"></span></h1>
+                <p>আমি একজন প্রফেশনাল ডেভেলপার। লটে অ্যানিমেশন এবং মডার্ন ইউআই দিয়ে আমি আপনার স্বপ্নকে বাস্তবে রূপ দিই।</p>
                 <div class="btn-group">
                     <a href="#contact" class="btn btn-primary">হায়ার মি</a>
-                    <a href="#portfolio" class="btn btn-outline">প্রজেক্টস দেখুন</a>
+                    <a href="#portfolio" class="btn btn-outline">কাজ দেখুন</a>
                 </div>
             </div>
-            <div class="hero-animation" data-aos="fade-left">
-                <lottie-player 
-                    src="https://assets3.lottiefiles.com/packages/lf20_w51pcehl.json" 
-                    background="transparent" 
-                    speed="1" 
-                    style="width: 100%; max-width: 500px; height: 400px;" 
-                    loop autoplay>
-                </lottie-player>
+            <div class="hero-animation" data-aos="zoom-in">
+                <!-- Hero Animation -->
+                <lottie-player src="https://lottie.host/80916a04-585a-4e20-994c-28078a9c8b74/SclGz57t9T.json" background="transparent" speed="1" loop autoplay></lottie-player>
             </div>
         </div>
     </section>
 
-    <!-- Services -->
+    <!-- Services Section with Lottie Icons -->
     <section id="services">
-        <h2 class="section-title" data-aos="fade-down">আমার সার্ভিসসমূহ</h2>
+        <h2 class="section-title" data-aos="fade-up">আমার সার্ভিসসমূহ</h2>
         <div class="grid">
-            <div class="glass-card" data-aos="flip-left">
-                <i class="fas fa-code"></i>
+            <div class="glass-card" data-aos="fade-up">
+                <div class="lottie-icon">
+                    <lottie-player src="https://lottie.host/68205167-27a3-4b47-920d-7368d37449c4/y0n8f8tW6V.json" background="transparent" speed="1" loop autoplay></lottie-player>
+                </div>
                 <h3>Web Development</h3>
-                <p>ক্লিন কোড এবং লেটেস্ট ফ্রেমওয়ার্ক ব্যবহার করে ওয়েবসাইট তৈরি করি।</p>
+                <p>ক্লিন কোড এবং লেটেস্ট টেকনোলজি ব্যবহার করে ওয়েবসাইট তৈরি।</p>
             </div>
-            <div class="glass-card" data-aos="flip-left" data-aos-delay="200">
-                <i class="fas fa-paint-brush"></i>
-                <h3>UI/UX Design</h3>
-                <p>আধুনিক এবং ইউজার ফ্রেন্ডলি ডিজাইন আমার প্রধান বিশেষত্ব।</p>
+            <div class="glass-card" data-aos="fade-up" data-aos-delay="200">
+                <div class="lottie-icon">
+                    <lottie-player src="https://lottie.host/49340026-673e-4d40-8430-80415a999201/zM1nKz0pXo.json" background="transparent" speed="1" loop autoplay></lottie-player>
+                </div>
+                <h3>Mobile App Design</h3>
+                <p>অ্যান্ড্রয়েড এবং আইওএস এর জন্য ইউজার ফ্রেন্ডলি অ্যাপ ডিজাইন।</p>
             </div>
-            <div class="glass-card" data-aos="flip-left" data-aos-delay="400">
-                <i class="fas fa-mobile-alt"></i>
-                <h3>App Design</h3>
-                <p>অ্যান্ড্রয়েড এবং আইওএস এর জন্য সুন্দর মোবাইল অ্যাপ ডিজাইন।</p>
-            </div>
-        </div>
-    </section>
-
-    <!-- Skills Section -->
-    <section id="skills" class="skills-section">
-        <h2 class="section-title" data-aos="fade-up">আমার দক্ষতা (Skills)</h2>
-        <div class="skill-box" data-aos="fade-up">
-            <div class="skill-info"><span>HTML</span><span>90%</span></div>
-            <div class="bar"><div class="progress" style="width: 90%;"></div></div>
-        </div>
-        <div class="skill-box" data-aos="fade-up" data-aos-delay="100">
-            <div class="skill-info"><span>CSS</span><span>85%</span></div>
-            <div class="bar"><div class="progress" style="width: 85%;"></div></div>
-        </div>
-        <div class="skill-box" data-aos="fade-up" data-aos-delay="200">
-            <div class="skill-info"><span>JavaScript</span><span>75%</span></div>
-            <div class="bar"><div class="progress" style="width: 75%;"></div></div>
-        </div>
-        <div class="skill-box" data-aos="fade-up" data-aos-delay="300">
-            <div class="skill-info"><span>Tailwind CSS</span><span>90%</span></div>
-            <div class="bar"><div class="progress" style="width: 90%;"></div></div>
-        </div>
-    </section>
-
-    <!-- Projects -->
-    <section id="portfolio">
-        <h2 class="section-title" data-aos="fade-up">সাম্প্রতিক প্রজেক্টস</h2>
-        <div class="grid">
-            <div class="portfolio-card" data-aos="zoom-in">
-                <img src="https://picsum.photos/id/1/800/600" alt="Work">
-                <div class="overlay"><h4>Web App Design</h4></div>
-            </div>
-            <div class="portfolio-card" data-aos="zoom-in" data-aos-delay="200">
-                <img src="https://picsum.photos/id/2/800/600" alt="Work">
-                <div class="overlay"><h4>Branding</h4></div>
-            </div>
-            <div class="portfolio-card" data-aos="zoom-in" data-aos-delay="400">
-                <img src="https://picsum.photos/id/3/800/600" alt="Work">
-                <div class="overlay"><h4>UI Concept</h4></div>
+            <div class="glass-card" data-aos="fade-up" data-aos-delay="400">
+                <div class="lottie-icon">
+                    <lottie-player src="https://lottie.host/0a93f773-772c-490b-9273-5f04825988e0/9Pq1lO8G0y.json" background="transparent" speed="1" loop autoplay></lottie-player>
+                </div>
+                <h3>SEO Optimization</h3>
+                <p>আপনার সাইটকে সার্চ ইঞ্জিনের সবার উপরে নিয়ে আসা।</p>
             </div>
         </div>
     </section>
 
-    <!-- Contact -->
+    <!-- Skills Section with Side Animation -->
+    <section id="skills">
+        <div class="hero-container">
+            <div class="hero-animation" data-aos="fade-right">
+                <lottie-player src="https://lottie.host/8b475960-955a-42d4-a95e-38c36209b552/GjB8UuS7eU.json" background="transparent" speed="1" loop autoplay></lottie-player>
+            </div>
+            <div class="hero-text" data-aos="fade-left">
+                <h2 class="section-title" style="text-align: left;">আমার টেকনিক্যাল স্কিলস</h2>
+                <div class="skill-box">
+                    <div class="skill-info"><span>HTML/CSS/JS</span><span>95%</span></div>
+                    <div class="bar"><div class="progress" style="width: 95%;"></div></div>
+                </div>
+                <div class="skill-box">
+                    <div class="skill-info"><span>React.js & Next.js</span><span>85%</span></div>
+                    <div class="bar"><div class="progress" style="width: 85%;"></div></div>
+                </div>
+                <div class="skill-box">
+                    <div class="skill-info"><span>Node.js & MongoDB</span><span>75%</span></div>
+                    <div class="bar"><div class="progress" style="width: 75%;"></div></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience Timeline -->
+    <section id="experience">
+        <h2 class="section-title" data-aos="fade-up">অভিজ্ঞতা ও শিক্ষা</h2>
+        <div class="timeline">
+            <div class="timeline-item" data-aos="fade-right">
+                <div class="timeline-content">
+                    <h3>সিনিয়র ডেভেলপার</h3>
+                    <span>২০২২ - বর্তমান | টেক সল্যুশন</span>
+                    <p>ফুল-স্ট্যাক প্রজেক্ট ম্যানেজমেন্ট।</p>
+                </div>
+            </div>
+            <div class="timeline-item" data-aos="fade-left">
+                <div class="timeline-content">
+                    <h3>UI/UX ডিজাইনার</h3>
+                    <span>২০২০ - ২০২১ | ক্রিয়েটিভ ল্যাব</span>
+                    <p>ইউজার ইন্টারফেস ডিজাইন।</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section with Lottie -->
     <section id="contact">
         <h2 class="section-title">যোগাযোগ করুন</h2>
-        <div class="contact-form" data-aos="fade-up">
-            <input type="text" placeholder="আপনার নাম">
-            <input type="email" placeholder="আপনার ইমেইল">
-            <textarea rows="5" placeholder="আপনার মেসেজ"></textarea>
-            <button class="btn btn-primary" style="width: 100%; border:none; cursor:pointer;">সেন্ড মেসেজ</button>
+        <div class="hero-container">
+            <div class="hero-animation" data-aos="zoom-in">
+                <lottie-player src="https://lottie.host/62678663-8888-4c9f-8646-17551600913e/3V0jF8vFvE.json" background="transparent" speed="1" loop autoplay></lottie-player>
+            </div>
+            <div class="contact-form" data-aos="fade-up">
+                <input type="text" placeholder="আপনার নাম">
+                <input type="email" placeholder="আপনার ইমেইল">
+                <textarea rows="5" placeholder="মেসেজ"></textarea>
+                <button class="btn btn-primary" style="width: 100%; border:none; cursor:pointer;">মেসেজ পাঠান</button>
+            </div>
         </div>
     </section>
 
     <footer>
-        <p>&copy; ২০২৪ | প্রফেশনাল পোর্টফোলিও ডিজাইন</p>
-        <div style="margin-top: 15px; font-size: 1.5rem;">
-            <i class="fab fa-facebook" style="margin: 0 10px; cursor: pointer;"></i>
-            <i class="fab fa-github" style="margin: 0 10px; cursor: pointer;"></i>
-            <i class="fab fa-linkedin" style="margin: 0 10px; cursor: pointer;"></i>
-        </div>
+        <p>&copy; ২০২৪ | প্রফেশনাল অ্যানিমেটেড পোর্টফোলিও</p>
     </footer>
 
-    <!-- JS Scripts -->
+    <!-- External Scripts -->
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
     <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
-
-    <script>
-        // 1. Initialize AOS
-        AOS.init({ duration: 1000, once: true });
-
-        // 2. Typing Effect
-        var typed = new Typed(".typing-text", {
-            strings: ["Web Developer", "UI/UX Designer", "Freelancer", "Content Creator"],
-            typeSpeed: 100,
-            backSpeed: 60,
-            loop: true
-        });
-
-        // 3. Custom Cursor
-        const cursor = document.querySelector('.cursor');
-        document.addEventListener('mousemove', (e) => {
-            cursor.style.left = e.clientX + 'px';
-            cursor.style.top = e.clientY + 'px';
-        });
-
-        // 4. Navbar Background on Scroll
-        window.addEventListener('scroll', () => {
-            const nav = document.querySelector('nav');
-            if (window.scrollY > 50) {
-                nav.style.background = 'rgba(15, 23, 42, 0.9)';
-            } else {
-                nav.style.background = 'transparent';
-            }
-        });
-    </script>
+    <script src="script.js"></script>
 </body>
 </html>
