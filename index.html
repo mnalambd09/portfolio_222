@@ -179,6 +179,16 @@
             .hero h1 { font-size: 2.5rem; }
             .nav-links { display: none; }
         }
+        .cursor {
+    width: 20px;
+    height: 20px;
+    border: 2px solid var(--primary-color);
+    border-radius: 50%;
+    position: fixed;
+    pointer-events: none;
+    z-index: 9999;
+    transition: transform 0.1s ease;
+}
     </style>
 </head>
 <body>
@@ -271,7 +281,9 @@
     </footer>
 
     <!-- Scripts -->
+     <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
     <script>
         // Initialize Animations
         AOS.init({
@@ -290,6 +302,37 @@
                 nav.style.padding = '20px 8%';
             }
         });
+
+        // typing-text effect
+        var typed = new Typed(".typing-text", {
+    strings: ["Web Developer", "UI/UX Designer", "Freelancer", "Content Creator"],
+    typeSpeed: 100,
+    backSpeed: 60,
+    loop: true
+});
+
+// cursor effect
+const cursor = document.querySelector('.cursor');
+document.addEventListener('mousemove', (e) => {
+    cursor.style.left = e.pageX + 'px';
+    cursor.style.top = e.pageY + 'px';
+});
+
+// 1. Typing Effect
+    new Typed(".typing-text", {
+        strings: ["Web Developer", "Designer", "Programmer"],
+        typeSpeed: 100,
+        backSpeed: 60,
+        loop: true
+    });
+
+    // 2. Simple Scroll Progress Indicator
+    window.onscroll = function() {
+        let winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+        let height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+        let scrolled = (winScroll / height) * 100;
+        // আপনি চাইলে উপরে একটি চিকন বার দিয়ে এটি দেখাতে পারেন
+    };
     </script>
 </body>
 </html>
