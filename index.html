@@ -189,6 +189,19 @@
     z-index: 9999;
     transition: transform 0.1s ease;
 }
+
+@media (max-width: 768px) {
+    .hero div {
+        flex-direction: column;
+        text-align: center !important;
+    }
+    .hero-content {
+        text-align: center !important;
+    }
+    lottie-player {
+        height: 300px !important;
+    }
+}
     </style>
 </head>
 <body>
@@ -218,6 +231,33 @@
             <a href="#portfolio" class="btn btn-outline">প্রজেক্টস দেখুন</a>
         </div>
     </section>
+    <!-- Updated Hero Section with Lottie Animation -->
+<section class="hero" id="home">
+    <div style="display: flex; align-items: center; justify-content: space-between; width: 100%; max-width: 1200px; flex-wrap: wrap;">
+        
+        <!-- Text Content -->
+        <div style="flex: 1; min-width: 300px; text-align: left;" data-aos="fade-right">
+            <h1>হ্যালো, আমি <span class="typing-text" style="color: var(--secondary-color);"></span></h1>
+            <p>আমি একজন মডার্ন ফুল-স্ট্যাক ডেভেলপার। <br> লটে অ্যানিমেশন দিয়ে আপনার সাইটকে আরও সুন্দর করছি।</p>
+            <div class="btn-group">
+                <a href="#contact" class="btn btn-primary">যোগাযোগ করুন</a>
+            </div>
+        </div>
+
+        <!-- Lottie Animation -->
+        <div style="flex: 1; min-width: 300px;" data-aos="fade-left">
+            <lottie-player 
+                src="https://assets10.lottiefiles.com/packages/lf20_w51pcehl.json" 
+                background="transparent" 
+                speed="1" 
+                style="width: 100%; height: 400px;" 
+                loop 
+                autoplay>
+            </lottie-player>
+        </div>
+
+    </div>
+</section>
 
     <!-- Services -->
     <section id="services">
@@ -339,5 +379,6 @@ document.addEventListener('mousemove', (e) => {
         // আপনি চাইলে উপরে একটি চিকন বার দিয়ে এটি দেখাতে পারেন
     };
     </script>
+    <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
 </body>
 </html>
