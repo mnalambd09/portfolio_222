@@ -14,6 +14,9 @@
     <!-- AOS CSS -->
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 
+    <!-- Load Lottie Player in Head for better performance -->
+    <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+
     <style>
         :root {
             --primary-color: #6366f1;
@@ -76,7 +79,7 @@
         .stats-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px; text-align: center; width: 100%; }
         .stat-item h2 { font-size: 3rem; color: var(--primary-color); }
 
-        /* Project Section */
+        /* Portfolio Section */
         .project-card { position: relative; overflow: hidden; border-radius: 20px; height: 250px; }
         .project-card img { width: 100%; height: 100%; object-fit: cover; transition: 0.5s; }
         .project-overlay { position: absolute; bottom: -100%; left: 0; width: 100%; height: 100%; background: linear-gradient(transparent, var(--bg-dark)); display: flex; flex-direction: column; justify-content: center; align-items: center; transition: 0.5s; }
@@ -90,7 +93,7 @@
         /* Footer */
         footer { padding: 60px 8% 30px; border-top: 1px solid rgba(255, 255, 255, 0.1); text-align: center; }
         .social-links { margin: 20px 0; }
-        .social-links a { color: white; font-size: 1.5rem; margin: 0 15px; transition: 0.3s; }
+        .social-links a { color: white; font-size: 1.5rem; margin: 0 15px; transition: 0.3s; text-decoration: none;}
         .social-links a:hover { color: var(--primary-color); transform: translateY(-5px); display: inline-block; }
 
         @media (max-width: 768px) {
@@ -132,17 +135,18 @@
                 </div>
             </div>
             <div class="hero-animation" data-aos="zoom-in">
-                <lottie-player src="https://assets5.lottiefiles.com/packages/lf20_iv4dsx3q.json" background="transparent" speed="1" style="width: 100%; height: 400px;" loop autoplay></lottie-player>
+                <!-- Working Lottie -->
+                <lottie-player src="https://lottie.host/804618e4-839e-4a6c-9411-4177a646c05a/yD743YfC9S.json" background="transparent" speed="1" style="width: 100%; height: 400px;" loop autoplay></lottie-player>
             </div>
         </div>
     </section>
 
-    <!-- About Section (Fixed Lottie) -->
+    <!-- About Section (FIXED LOTTIE) -->
     <section id="about" style="background: rgba(255,255,255,0.02);">
         <div class="container">
             <div class="hero-animation" data-aos="fade-right">
-                <!-- Working Lottie for About -->
-                <lottie-player src="https://assets2.lottiefiles.com/packages/lf20_m6zL3u.json" background="transparent" speed="1" style="width: 100%; height: 400px;" loop autoplay></lottie-player>
+                <!-- Working Lottie for About Me -->
+                <lottie-player src="https://lottie.host/570e3009-3353-4886-9a25-c6374092b311/E29D4rV748.json" background="transparent" speed="1" style="width: 100%; height: 400px;" loop autoplay></lottie-player>
             </div>
             <div class="hero-text" data-aos="fade-left">
                 <h2 class="section-title" style="text-align: left;">আমার সম্পর্কে</h2>
@@ -155,7 +159,7 @@
         </div>
     </section>
 
-    <!-- Stats Section (New) -->
+    <!-- Stats Section -->
     <section id="stats">
         <div class="stats-grid">
             <div class="stat-item" data-aos="fade-up">
@@ -177,7 +181,7 @@
         </div>
     </section>
 
-    <!-- Services Section -->
+    <!-- Services Section (FIXED SEO IMAGE) -->
     <section id="services">
         <h2 class="section-title" data-aos="fade-up">সার্ভিসসমূহ</h2>
         <div class="grid">
@@ -192,14 +196,15 @@
                 <p>Backend এবং Frontend উভয় দিকেই শক্তিশালী ওয়েবসাইট সল্যুশন।</p>
             </div>
             <div class="glass-card" data-aos="fade-up" data-aos-delay="400">
-                <img src="https://images.unsplash.com/photo-1551288049-bbbda5366392?auto=format&fit=crop&w=500&q=60" class="service-img" alt="SEO">
+                <!-- FIXED SEO IMAGE LINK -->
+                <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=500&q=60" class="service-img" alt="SEO">
                 <h3>SEO অপ্টিমাইজেশন</h3>
                 <p>আপনার ওয়েবসাইটকে সার্চ ইঞ্জিনের প্রথম পাতায় নিয়ে আসার কাজ।</p>
             </div>
         </div>
     </section>
 
-    <!-- Portfolio Section (New) -->
+    <!-- Portfolio Section -->
     <section id="portfolio">
         <h2 class="section-title" data-aos="fade-up">আমার সাম্প্রতিক কাজ</h2>
         <div class="grid">
@@ -232,7 +237,7 @@
         <h2 class="section-title" data-aos="fade-up">যোগাযোগ করুন</h2>
         <div class="container">
             <div class="hero-animation" data-aos="fade-right">
-                <lottie-player src="https://assets9.lottiefiles.com/packages/lf20_u25cckyh.json" background="transparent" speed="1" style="width: 100%; height: 350px;" loop autoplay></lottie-player>
+                <lottie-player src="https://lottie.host/9f50e18f-a9b0-40e1-855f-8703e3a73c71/fXb60wAnM6.json" background="transparent" speed="1" style="width: 100%; height: 350px;" loop autoplay></lottie-player>
             </div>
             <div class="contact-form" data-aos="fade-left">
                 <input type="text" placeholder="আপনার নাম">
@@ -248,10 +253,10 @@
         <h3>নূর আলম</h3>
         <p>আপনার স্বপ্নকে বাস্তবে রূপদান করাই আমার কাজ।</p>
         <div class="social-links">
-            <a href="#"><i class="fab fa-facebook"></i></a>
-            <a href="#"><i class="fab fa-github"></i></a>
-            <a href="#"><i class="fab fa-linkedin"></i></a>
-            <a href="#"><i class="fab fa-twitter"></i></a>
+            <a href="https://facebook.com/yourprofile" target="_blank"><i class="fab fa-facebook"></i></a>
+            <a href="https://github.com/yourusername" target="_blank"><i class="fab fa-github"></i></a>
+            <a href="https://linkedin.com/in/yourprofile" target="_blank"><i class="fab fa-linkedin"></i></a>
+            <a href="https://twitter.com/yourusername" target="_blank"><i class="fab fa-twitter"></i></a>
             <a href="mailto:nooralam@example.com"><i class="fas fa-envelope"></i></a>
         </div>
         <p style="font-size: 0.8rem; opacity: 0.6; margin-top: 20px;">&copy; ২০২৪ নূর আলম | সর্বস্বত্ব সংরক্ষিত</p>
@@ -260,11 +265,12 @@
     <!-- Scripts -->
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
-    <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
 
     <script>
+        // Initialize Animations
         AOS.init({ duration: 1000, once: true });
 
+        // Typing Effect
         var typed = new Typed(".typing-text", {
             strings: ["Web Developer.", "UI/UX Designer.", "React Specialist.", "Full Stack Freelancer."],
             typeSpeed: 60,
@@ -272,12 +278,14 @@
             loop: true
         });
 
+        // Custom Cursor
         const cursor = document.querySelector('.cursor');
         document.addEventListener('mousemove', (e) => {
             cursor.style.left = e.clientX + 'px';
             cursor.style.top = e.clientY + 'px';
         });
 
+        // Sticky Navbar
         window.addEventListener('scroll', () => {
             const nav = document.getElementById('navbar');
             if (window.scrollY > 50) {
