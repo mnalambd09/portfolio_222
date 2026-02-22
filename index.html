@@ -35,6 +35,20 @@
             background-color: var(--bg-dark);
             color: var(--text-light);
             overflow-x: hidden;
+            cursor: none; /* কাস্টম কার্সারের জন্য মেইন কার্সার হাইড */
+        }
+
+        /* Custom Cursor */
+        .cursor {
+            width: 20px;
+            height: 20px;
+            border: 2px solid var(--primary-color);
+            border-radius: 50%;
+            position: fixed;
+            pointer-events: none;
+            z-index: 9999;
+            transition: transform 0.1s ease;
+            background: rgba(99, 102, 241, 0.2);
         }
 
         /* Background Animated Circles */
@@ -69,30 +83,40 @@
         .nav-links li { margin-left: 30px; }
         .nav-links a { 
             text-decoration: none; color: white; font-weight: 400; 
-            transition: 0.3s; position: relative;
+            transition: 0.3s;
         }
         .nav-links a:hover { color: var(--primary-color); }
 
         /* Hero Section */
         .hero {
-            height: 100vh;
+            min-height: 100vh;
             display: flex;
-            flex-direction: column;
-            justify-content: center;
             align-items: center;
-            text-align: center;
-            padding: 0 10%;
+            justify-content: center;
+            padding: 80px 8% 0;
+            text-align: left;
         }
 
-        .hero h1 {
-            font-size: 4rem;
+        .hero-container {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            width: 100%;
+            max-width: 1200px;
+            flex-wrap: wrap;
+        }
+
+        .hero-text { flex: 1; min-width: 300px; }
+        .hero-text h1 {
+            font-size: 3.5rem;
             margin-bottom: 15px;
             background: linear-gradient(to right, #6366f1, #a855f7);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
         }
+        .hero-text p { font-size: 1.1rem; color: #94a3b8; margin-bottom: 30px; }
 
-        .hero p { font-size: 1.2rem; color: #94a3b8; margin-bottom: 30px; }
+        .hero-animation { flex: 1; min-width: 300px; display: flex; justify-content: center; }
 
         .btn-group { display: flex; gap: 15px; }
         .btn {
@@ -101,53 +125,46 @@
             text-decoration: none;
             font-weight: 600;
             transition: 0.3s;
-            cursor: pointer;
         }
-        .btn-primary { background: var(--primary-color); color: white; border: none; }
-        .btn-primary:hover { transform: scale(1.05); box-shadow: 0 10px 20px rgba(99, 102, 241, 0.3); }
+        .btn-primary { background: var(--primary-color); color: white; }
         .btn-outline { border: 2px solid var(--primary-color); color: white; }
 
-        /* Card Style Section */
-        section { padding: 100px 8%; }
-        .section-title { 
-            text-align: center; font-size: 2.5rem; margin-bottom: 50px; 
-            position: relative;
+        /* Skills Progress Bar CSS */
+        .skills-section { padding: 80px 8%; }
+        .skill-box { margin-bottom: 25px; max-width: 600px; margin-inline: auto; }
+        .skill-info { display: flex; justify-content: space-between; margin-bottom: 8px; font-weight: 600; }
+        .bar { 
+            background: rgba(255, 255, 255, 0.1); 
+            height: 12px; 
+            border-radius: 10px; 
+            overflow: hidden; 
+        }
+        .progress { 
+            background: linear-gradient(to right, var(--primary-color), var(--secondary-color)); 
+            height: 100%; 
+            border-radius: 10px;
+            transition: 1.5s ease-in-out;
         }
 
-        .grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 25px;
-        }
+        /* Grid System */
+        section { padding: 100px 8%; }
+        .section-title { text-align: center; font-size: 2.5rem; margin-bottom: 50px; }
+        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 25px; }
 
         .glass-card {
             background: var(--glass-bg);
             backdrop-filter: blur(10px);
-            border: 1px solid rgba(255, 255, 255, 0.1);
             padding: 30px;
             border-radius: 20px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
             transition: 0.3s;
         }
+        .glass-card:hover { transform: translateY(-10px); background: rgba(255, 255, 255, 0.1); }
+        .glass-card i { font-size: 2.5rem; color: var(--primary-color); margin-bottom: 20px; }
 
-        .glass-card:hover {
-            transform: translateY(-10px);
-            background: rgba(255, 255, 255, 0.1);
-        }
-
-        .glass-card i {
-            font-size: 2.5rem; color: var(--primary-color); margin-bottom: 20px;
-        }
-
-        /* Portfolio Image Hover */
-        .portfolio-card {
-            position: relative;
-            border-radius: 20px;
-            overflow: hidden;
-            height: 250px;
-        }
-        .portfolio-card img {
-            width: 100%; height: 100%; object-fit: cover; transition: 0.5s;
-        }
+        /* Portfolio Image */
+        .portfolio-card { position: relative; border-radius: 20px; overflow: hidden; height: 250px; }
+        .portfolio-card img { width: 100%; height: 100%; object-fit: cover; }
         .overlay {
             position: absolute; bottom: 0; left: 0; width: 100%; height: 0;
             background: linear-gradient(transparent, var(--primary-color));
@@ -155,13 +172,9 @@
             overflow: hidden; transition: 0.5s;
         }
         .portfolio-card:hover .overlay { height: 100%; }
-        .portfolio-card:hover img { transform: scale(1.1); }
 
         /* Contact Section */
-        .contact-form {
-            max-width: 600px; margin: 0 auto;
-            background: var(--glass-bg); padding: 40px; border-radius: 20px;
-        }
+        .contact-form { max-width: 600px; margin: 0 auto; background: var(--glass-bg); padding: 40px; border-radius: 20px; }
         .contact-form input, .contact-form textarea {
             width: 100%; padding: 15px; margin-bottom: 15px;
             background: rgba(255, 255, 255, 0.05);
@@ -169,43 +182,22 @@
             border-radius: 10px; color: white; outline: none;
         }
 
-        /* Footer */
-        footer {
-            text-align: center; padding: 40px; border-top: 1px solid rgba(255, 255, 255, 0.1);
-        }
+        footer { text-align: center; padding: 40px; border-top: 1px solid rgba(255, 255, 255, 0.1); }
 
         /* Responsive */
         @media (max-width: 768px) {
-            .hero h1 { font-size: 2.5rem; }
+            body { cursor: default; }
+            .cursor { display: none; }
+            .hero-text { text-align: center; }
+            .hero-text h1 { font-size: 2.5rem; }
+            .btn-group { justify-content: center; }
             .nav-links { display: none; }
         }
-        .cursor {
-    width: 20px;
-    height: 20px;
-    border: 2px solid var(--primary-color);
-    border-radius: 50%;
-    position: fixed;
-    pointer-events: none;
-    z-index: 9999;
-    transition: transform 0.1s ease;
-}
-
-@media (max-width: 768px) {
-    .hero div {
-        flex-direction: column;
-        text-align: center !important;
-    }
-    .hero-content {
-        text-align: center !important;
-    }
-    lottie-player {
-        height: 300px !important;
-    }
-}
     </style>
 </head>
 <body>
 
+    <div class="cursor"></div>
     <div class="circle circle-1"></div>
     <div class="circle circle-2"></div>
 
@@ -214,8 +206,8 @@
         <div class="logo">PORTFOLIO.</div>
         <ul class="nav-links">
             <li><a href="#home">Home</a></li>
-            <li><a href="#about">About</a></li>
             <li><a href="#services">Services</a></li>
+            <li><a href="#skills">Skills</a></li>
             <li><a href="#portfolio">Projects</a></li>
             <li><a href="#contact">Contact</a></li>
         </ul>
@@ -223,41 +215,26 @@
 
     <!-- Hero Section -->
     <section class="hero" id="home">
-        <span class="typing-text"></span>
-        <h1 data-aos="fade-up">মেকিং আইডিয়াজ ইনটু <br> <span style="color: var(--secondary-color);">রিয়েলিটি।</span></h1>
-        <p data-aos="fade-up" data-aos-delay="200">আমি একজন মডার্ন ফুল-স্ট্যাক ডেভেলপার যারা আপনার ব্যবসার জন্য ডিজিটাল সলিউশন তৈরি করে।</p>
-        <div class="btn-group" data-aos="zoom-in" data-aos-delay="400">
-            <a href="#contact" class="btn btn-primary">হায়ার মি</a>
-            <a href="#portfolio" class="btn btn-outline">প্রজেক্টস দেখুন</a>
-        </div>
-    </section>
-    <!-- Updated Hero Section with Lottie Animation -->
-<section class="hero" id="home">
-    <div style="display: flex; align-items: center; justify-content: space-between; width: 100%; max-width: 1200px; flex-wrap: wrap;">
-        
-        <!-- Text Content -->
-        <div style="flex: 1; min-width: 300px; text-align: left;" data-aos="fade-right">
-            <h1>হ্যালো, আমি <span class="typing-text" style="color: var(--secondary-color);"></span></h1>
-            <p>আমি একজন মডার্ন ফুল-স্ট্যাক ডেভেলপার। <br> লটে অ্যানিমেশন দিয়ে আপনার সাইটকে আরও সুন্দর করছি।</p>
-            <div class="btn-group">
-                <a href="#contact" class="btn btn-primary">যোগাযোগ করুন</a>
+        <div class="hero-container">
+            <div class="hero-text" data-aos="fade-right">
+                <h1>হ্যালো, আমি <br><span class="typing-text" style="color: var(--secondary-color);"></span></h1>
+                <p>আমি একজন মডার্ন ফুল-স্ট্যাক ডেভেলপার যারা আপনার ব্যবসার জন্য ডিজিটাল সলিউশন তৈরি করে। লটে অ্যানিমেশন দিয়ে আপনার সাইটকে আরও সুন্দর করছি।</p>
+                <div class="btn-group">
+                    <a href="#contact" class="btn btn-primary">হায়ার মি</a>
+                    <a href="#portfolio" class="btn btn-outline">প্রজেক্টস দেখুন</a>
+                </div>
+            </div>
+            <div class="hero-animation" data-aos="fade-left">
+                <lottie-player 
+                    src="https://assets3.lottiefiles.com/packages/lf20_w51pcehl.json" 
+                    background="transparent" 
+                    speed="1" 
+                    style="width: 100%; max-width: 500px; height: 400px;" 
+                    loop autoplay>
+                </lottie-player>
             </div>
         </div>
-
-        <!-- Lottie Animation -->
-        <div style="flex: 1; min-width: 300px;" data-aos="fade-left">
-            <lottie-player 
-                src="https://assets10.lottiefiles.com/packages/lf20_w51pcehl.json" 
-                background="transparent" 
-                speed="1" 
-                style="width: 100%; height: 400px;" 
-                loop 
-                autoplay>
-            </lottie-player>
-        </div>
-
-    </div>
-</section>
+    </section>
 
     <!-- Services -->
     <section id="services">
@@ -281,16 +258,37 @@
         </div>
     </section>
 
+    <!-- Skills Section -->
+    <section id="skills" class="skills-section">
+        <h2 class="section-title" data-aos="fade-up">আমার দক্ষতা (Skills)</h2>
+        <div class="skill-box" data-aos="fade-up">
+            <div class="skill-info"><span>HTML</span><span>90%</span></div>
+            <div class="bar"><div class="progress" style="width: 90%;"></div></div>
+        </div>
+        <div class="skill-box" data-aos="fade-up" data-aos-delay="100">
+            <div class="skill-info"><span>CSS</span><span>85%</span></div>
+            <div class="bar"><div class="progress" style="width: 85%;"></div></div>
+        </div>
+        <div class="skill-box" data-aos="fade-up" data-aos-delay="200">
+            <div class="skill-info"><span>JavaScript</span><span>75%</span></div>
+            <div class="bar"><div class="progress" style="width: 75%;"></div></div>
+        </div>
+        <div class="skill-box" data-aos="fade-up" data-aos-delay="300">
+            <div class="skill-info"><span>Tailwind CSS</span><span>90%</span></div>
+            <div class="bar"><div class="progress" style="width: 90%;"></div></div>
+        </div>
+    </section>
+
     <!-- Projects -->
     <section id="portfolio">
         <h2 class="section-title" data-aos="fade-up">সাম্প্রতিক প্রজেক্টস</h2>
         <div class="grid">
             <div class="portfolio-card" data-aos="zoom-in">
-                <img src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&w=800&q=80" alt="Work">
-                <div class="overlay"><h4>Web App</h4></div>
+                <img src="https://picsum.photos/id/1/800/600" alt="Work">
+                <div class="overlay"><h4>Web App Design</h4></div>
             </div>
             <div class="portfolio-card" data-aos="zoom-in" data-aos-delay="200">
-                <img src="https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?auto=format&fit=crop&w=800&q=80" alt="Work">
+                <img src="https://picsum.photos/id/2/800/600" alt="Work">
                 <div class="overlay"><h4>Branding</h4></div>
             </div>
             <div class="portfolio-card" data-aos="zoom-in" data-aos-delay="400">
@@ -300,17 +298,6 @@
         </div>
     </section>
 
-    <div class="skill-box">
-    <span>HTML</span>
-    <div class="bar"><div class="progress" style="width: 90%;"></div></div>
-    <span>CSS</span>
-    <div class="bar"><div class="progress" style="width: 80%;"></div></div>
-    <span>TAILWIND</span>
-    <div class="bar"><div class="progress" style="width: 90%;"></div></div>
-    <span>BOOTSTRAP</span>
-    <div class="bar"><div class="progress" style="width: 90%;"></div></div>
-</div>
-
     <!-- Contact -->
     <section id="contact">
         <h2 class="section-title">যোগাযোগ করুন</h2>
@@ -318,11 +305,10 @@
             <input type="text" placeholder="আপনার নাম">
             <input type="email" placeholder="আপনার ইমেইল">
             <textarea rows="5" placeholder="আপনার মেসেজ"></textarea>
-            <button class="btn btn-primary" style="width: 100%;">সেন্ড মেসেজ</button>
+            <button class="btn btn-primary" style="width: 100%; border:none; cursor:pointer;">সেন্ড মেসেজ</button>
         </div>
     </section>
 
-    <!-- Footer -->
     <footer>
         <p>&copy; ২০২৪ | প্রফেশনাল পোর্টফোলিও ডিজাইন</p>
         <div style="margin-top: 15px; font-size: 1.5rem;">
@@ -332,53 +318,39 @@
         </div>
     </footer>
 
-    <!-- Scripts -->
-     <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+    <!-- JS Scripts -->
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+    <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+
     <script>
-        // Initialize Animations
-        AOS.init({
-            duration: 1000,
-            once: true
+        // 1. Initialize AOS
+        AOS.init({ duration: 1000, once: true });
+
+        // 2. Typing Effect
+        var typed = new Typed(".typing-text", {
+            strings: ["Web Developer", "UI/UX Designer", "Freelancer", "Content Creator"],
+            typeSpeed: 100,
+            backSpeed: 60,
+            loop: true
         });
 
-        // Navbar scroll effect
+        // 3. Custom Cursor
+        const cursor = document.querySelector('.cursor');
+        document.addEventListener('mousemove', (e) => {
+            cursor.style.left = e.clientX + 'px';
+            cursor.style.top = e.clientY + 'px';
+        });
+
+        // 4. Navbar Background on Scroll
         window.addEventListener('scroll', () => {
             const nav = document.querySelector('nav');
             if (window.scrollY > 50) {
                 nav.style.background = 'rgba(15, 23, 42, 0.9)';
-                nav.style.padding = '15px 8%';
             } else {
                 nav.style.background = 'transparent';
-                nav.style.padding = '20px 8%';
             }
         });
-
-        // typing-text effect
-        var typed = new Typed(".typing-text", {
-    strings: ["Web Developer", "UI/UX Designer", "Freelancer", "Content Creator"],
-    typeSpeed: 100,
-    backSpeed: 60,
-    loop: true
-});
-
-// cursor effect
-const cursor = document.querySelector('.cursor');
-document.addEventListener('mousemove', (e) => {
-    cursor.style.left = e.pageX + 'px';
-    cursor.style.top = e.pageY + 'px';
-});
-
-
-    // 2. Simple Scroll Progress Indicator
-    window.onscroll = function() {
-        let winScroll = document.body.scrollTop || document.documentElement.scrollTop;
-        let height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
-        let scrolled = (winScroll / height) * 100;
-        // আপনি চাইলে উপরে একটি চিকন বার দিয়ে এটি দেখাতে পারেন
-    };
     </script>
-    <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
 </body>
 </html>
