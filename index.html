@@ -37,7 +37,7 @@
         .cursor { width: 20px; height: 20px; border: 2px solid var(--primary-color); border-radius: 50%; position: fixed; pointer-events: none; z-index: 9999; transition: transform 0.1s ease; background: rgba(99, 102, 241, 0.2); }
 
         /* Background Circles */
-        .circle { position: fixed; width: 300px; height: 300px; filter: blur(100px); z-index: -1; border-radius: 50%; opacity: 0.2; }
+        .circle { position: fixed; width: 300px; height: 300px; filter: blur(100px); z-index: -1; border-radius: 50%; opacity: 0.3; }
         .circle-1 { background: var(--primary-color); top: -50px; left: -50px; }
         .circle-2 { background: var(--secondary-color); bottom: -50px; right: -50px; }
 
@@ -68,30 +68,30 @@
 
         /* Cards & Grid */
         .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; width: 100%; }
-        .glass-card { background: var(--glass-bg); padding: 30px; border-radius: 25px; border: 1px solid rgba(255, 255, 255, 0.1); transition: 0.4s; backdrop-filter: blur(10px); text-align: center; }
+        .glass-card { background: var(--glass-bg); padding: 30px; border-radius: 25px; border: 1px solid rgba(255, 255, 255, 0.1); transition: 0.4s; backdrop-filter: blur(10px); }
         .glass-card:hover { transform: translateY(-10px); border-color: var(--primary-color); }
         .service-img { width: 100%; height: 200px; object-fit: cover; border-radius: 15px; margin-bottom: 20px; }
 
-        /* Stats */
-        .stats-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px; text-align: center; width: 100%; margin-top: 50px; }
+        /* Stats Section */
+        .stats-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px; text-align: center; width: 100%; }
         .stat-item h2 { font-size: 3rem; color: var(--primary-color); }
 
-        /* Portfolio */
+        /* Project Section */
         .project-card { position: relative; overflow: hidden; border-radius: 20px; height: 250px; }
         .project-card img { width: 100%; height: 100%; object-fit: cover; transition: 0.5s; }
         .project-overlay { position: absolute; bottom: -100%; left: 0; width: 100%; height: 100%; background: linear-gradient(transparent, var(--bg-dark)); display: flex; flex-direction: column; justify-content: center; align-items: center; transition: 0.5s; }
         .project-card:hover .project-overlay { bottom: 0; }
         .project-card:hover img { transform: scale(1.1); }
 
-        /* Form */
+        /* Contact Form */
         .contact-form { flex: 1; background: var(--glass-bg); padding: 40px; border-radius: 25px; border: 1px solid rgba(255,255,255,0.1); }
         .contact-form input, .contact-form textarea { width: 100%; padding: 15px; margin-bottom: 15px; background: rgba(255, 255, 255, 0.05); border: 1px solid rgba(255, 255, 255, 0.1); border-radius: 12px; color: white; outline: none; }
 
         /* Footer */
         footer { padding: 60px 8% 30px; border-top: 1px solid rgba(255, 255, 255, 0.1); text-align: center; }
         .social-links { margin: 20px 0; }
-        .social-links a { color: white; font-size: 1.5rem; margin: 0 15px; transition: 0.3s; text-decoration: none; display: inline-block; }
-        .social-links a:hover { color: var(--primary-color); transform: translateY(-5px); }
+        .social-links a { color: white; font-size: 1.5rem; margin: 0 15px; transition: 0.3s; }
+        .social-links a:hover { color: var(--primary-color); transform: translateY(-5px); display: inline-block; }
 
         @media (max-width: 768px) {
             .nav-links { display: none; }
@@ -125,39 +125,37 @@
             <div class="hero-text" data-aos="fade-right">
                 <h3 style="color: var(--primary-color); margin-bottom: 10px;">স্বাগতম আমার দুনিয়ায়</h3>
                 <h1>আমি <span style="color: var(--primary-color);">নূর আলম</span><br><span class="typing-text"></span></h1>
-                <p>আমি একজন প্রফেশনাল ওয়েব ডেভেলপার। আপনার ব্যবসার জন্য আধুনিক এবং প্রিমিয়াম ওয়েবসাইট তৈরি করাই আমার লক্ষ্য।</p>
+                <p>একজন প্রফেশনাল ওয়েব ডেভেলপার। আমি আপনার ব্যবসার জন্য আধুনিক, রেসপনসিভ এবং প্রিমিয়াম কোয়ালিটি ওয়েবসাইট তৈরি করি।</p>
                 <div class="btn-group" style="margin-top: 30px;">
                     <a href="#contact" class="btn btn-primary">Hire Me</a>
                     <a href="#portfolio" class="btn btn-outline">My Projects</a>
                 </div>
             </div>
             <div class="hero-animation" data-aos="zoom-in">
-                <!-- Stable Animation 1 -->
-                <script src="https://unpkg.com/@dotlottie/player-component@latest/dist/dotlottie-player.mjs" type="module"></script> 
-                <dotlottie-player src="https://lottie.host/804618e4-839e-4a6c-9411-4177a646c05a/yD743YfC9S.json" background="transparent" speed="1" style="width: 100%; height: 400px;" loop autoplay></dotlottie-player>
+                <lottie-player src="https://assets5.lottiefiles.com/packages/lf20_iv4dsx3q.json" background="transparent" speed="1" style="width: 100%; height: 400px;" loop autoplay></lottie-player>
             </div>
         </div>
     </section>
 
-    <!-- About Section -->
+    <!-- About Section (Fixed Lottie) -->
     <section id="about" style="background: rgba(255,255,255,0.02);">
         <div class="container">
             <div class="hero-animation" data-aos="fade-right">
-                <!-- Stable Animation 2 -->
-                <dotlottie-player src="https://lottie.host/570e3009-3353-4886-9a25-c6374092b311/E29D4rV748.json" background="transparent" speed="1" style="width: 100%; height: 400px;" loop autoplay></dotlottie-player>
+                <!-- Working Lottie for About -->
+                <lottie-player src="https://assets2.lottiefiles.com/packages/lf20_m6zL3u.json" background="transparent" speed="1" style="width: 100%; height: 400px;" loop autoplay></lottie-player>
             </div>
             <div class="hero-text" data-aos="fade-left">
                 <h2 class="section-title" style="text-align: left;">আমার সম্পর্কে</h2>
-                <p>আমি <b>নূর আলম</b>, একজন প্যাশনেট ওয়েব ডেভেলপার। আমি কোডিং এবং ডিজাইনের মাধ্যমে ডিজিটাল সমস্যা সমাধান করতে ভালোবাসি।</p>
+                <p>আমি <b>নূর আলম</b>, একজন প্যাশনেট ওয়েব ডেভেলপার। গত কয়েক বছর ধরে আমি কোডিং এবং ডিজাইনের মাধ্যমে ডিজিটাল সমস্যা সমাধান করে আসছি। আমার মূল লক্ষ্য হলো ইউজারদের জন্য চমৎকার অভিজ্ঞতা তৈরি করা।</p>
                 <br>
-                <p><i class="fas fa-check-circle" style="color: var(--primary-color);"></i> আধুনিক ডিজাইন সেন্স</p>
-                <p><i class="fas fa-check-circle" style="color: var(--primary-color);"></i> ক্লিন এবং রেসপনসিভ কোড</p>
-                <p><i class="fas fa-check-circle" style="color: var(--primary-color);"></i> ২৪/৭ ক্লায়েন্ট সাপোর্ট</p>
+                <p><i class="fas fa-code" style="color: var(--primary-color);"></i> আমি ক্লিন কোড লিখতে পছন্দ করি।</p>
+                <p><i class="fas fa-rocket" style="color: var(--primary-color);"></i> প্রতিটি প্রজেক্ট আমি নির্ধারিত সময়ে শেষ করি।</p>
+                <p><i class="fas fa-shield-alt" style="color: var(--primary-color);"></i> সিকিউরিটি এবং পারফরম্যান্স আমার প্রধান প্রাধান্য।</p>
             </div>
         </div>
     </section>
 
-    <!-- Stats Section -->
+    <!-- Stats Section (New) -->
     <section id="stats">
         <div class="stats-grid">
             <div class="stat-item" data-aos="fade-up">
@@ -172,6 +170,10 @@
                 <h2>3+</h2>
                 <p>বছরের অভিজ্ঞতা</p>
             </div>
+            <div class="stat-item" data-aos="fade-up" data-aos-delay="300">
+                <h2>24/7</h2>
+                <p>সাপোর্ট সুবিধা</p>
+            </div>
         </div>
     </section>
 
@@ -180,37 +182,46 @@
         <h2 class="section-title" data-aos="fade-up">সার্ভিসসমূহ</h2>
         <div class="grid">
             <div class="glass-card" data-aos="fade-up">
-                <img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=500&q=60" class="service-img" alt="Design">
+                <img src="https://images.unsplash.com/photo-1547658719-da2b51169166?auto=format&fit=crop&w=500&q=60" class="service-img" alt="Web">
                 <h3>ওয়েব ডিজাইন</h3>
-                <p>আধুনিক এবং ইউজার ফ্রেন্ডলি ইন্টারফেস তৈরি করা।</p>
+                <p>আধুনিক এবং আই-ক্যাচি ডিজাইন যা আপনার ভিজিটরদের মুগ্ধ করবে।</p>
             </div>
             <div class="glass-card" data-aos="fade-up" data-aos-delay="200">
                 <img src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&w=500&q=60" class="service-img" alt="Dev">
-                <h3>ডেভেলপমেন্ট</h3>
-                <p>React এবং Node.js ব্যবহার করে শক্তিশালী ওয়েব অ্যাপ তৈরি।</p>
+                <h3>ফুল-স্ট্যাক ডেভেলপমেন্ট</h3>
+                <p>Backend এবং Frontend উভয় দিকেই শক্তিশালী ওয়েবসাইট সল্যুশন।</p>
             </div>
             <div class="glass-card" data-aos="fade-up" data-aos-delay="400">
-                <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=500&q=60" class="service-img" alt="SEO">
+                <img src="https://images.unsplash.com/photo-1551288049-bbbda5366392?auto=format&fit=crop&w=500&q=60" class="service-img" alt="SEO">
                 <h3>SEO অপ্টিমাইজেশন</h3>
-                <p>আপনার সাইটকে সার্চ ইঞ্জিনে সবার উপরে নিয়ে আসা।</p>
+                <p>আপনার ওয়েবসাইটকে সার্চ ইঞ্জিনের প্রথম পাতায় নিয়ে আসার কাজ।</p>
             </div>
         </div>
     </section>
 
-    <!-- Portfolio Section -->
+    <!-- Portfolio Section (New) -->
     <section id="portfolio">
-        <h2 class="section-title" data-aos="fade-up">আমার কাজ</h2>
+        <h2 class="section-title" data-aos="fade-up">আমার সাম্প্রতিক কাজ</h2>
         <div class="grid">
             <div class="project-card" data-aos="zoom-in">
                 <img src="https://images.unsplash.com/photo-1563986768609-322da13575f3?auto=format&fit=crop&w=500&q=60" alt="Work 1">
                 <div class="project-overlay">
-                    <h4>E-Commerce Site</h4>
+                    <h4>ই-কমার্স ওয়েবসাইট</h4>
+                    <p>React & Node.js</p>
                 </div>
             </div>
             <div class="project-card" data-aos="zoom-in" data-aos-delay="100">
                 <img src="https://images.unsplash.com/photo-1517694712202-14dd9538aa97?auto=format&fit=crop&w=500&q=60" alt="Work 2">
                 <div class="project-overlay">
-                    <h4>Business Portfolio</h4>
+                    <h4>পোর্টফোলিও ডিজাইন</h4>
+                    <p>HTML, CSS, GSAP</p>
+                </div>
+            </div>
+            <div class="project-card" data-aos="zoom-in" data-aos-delay="200">
+                <img src="https://images.unsplash.com/photo-1507238691740-187a5b1d37b8?auto=format&fit=crop&w=500&q=60" alt="Work 3">
+                <div class="project-overlay">
+                    <h4>ব্লগিং প্ল্যাটফর্ম</h4>
+                    <p>Next.js & Firebase</p>
                 </div>
             </div>
         </div>
@@ -221,8 +232,7 @@
         <h2 class="section-title" data-aos="fade-up">যোগাযোগ করুন</h2>
         <div class="container">
             <div class="hero-animation" data-aos="fade-right">
-                <!-- Stable Animation 3 -->
-                <dotlottie-player src="https://lottie.host/9f50e18f-a9b0-40e1-855f-8703e3a73c71/fXb60wAnM6.json" background="transparent" speed="1" style="width: 100%; height: 350px;" loop autoplay></dotlottie-player>
+                <lottie-player src="https://assets9.lottiefiles.com/packages/lf20_u25cckyh.json" background="transparent" speed="1" style="width: 100%; height: 350px;" loop autoplay></lottie-player>
             </div>
             <div class="contact-form" data-aos="fade-left">
                 <input type="text" placeholder="আপনার নাম">
@@ -236,46 +246,46 @@
     <!-- Footer -->
     <footer>
         <h3>নূর আলম</h3>
-        <p>Your Vision, My Code.</p>
+        <p>আপনার স্বপ্নকে বাস্তবে রূপদান করাই আমার কাজ।</p>
         <div class="social-links">
-            <a href="https://facebook.com" target="_blank"><i class="fab fa-facebook"></i></a>
-            <a href="https://github.com" target="_blank"><i class="fab fa-github"></i></a>
-            <a href="https://linkedin.com" target="_blank"><i class="fab fa-linkedin"></i></a>
+            <a href="#"><i class="fab fa-facebook"></i></a>
+            <a href="#"><i class="fab fa-github"></i></a>
+            <a href="#"><i class="fab fa-linkedin"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
             <a href="mailto:nooralam@example.com"><i class="fas fa-envelope"></i></a>
         </div>
         <p style="font-size: 0.8rem; opacity: 0.6; margin-top: 20px;">&copy; ২০২৪ নূর আলম | সর্বস্বত্ব সংরক্ষিত</p>
     </footer>
 
-    <!-- Essential Scripts -->
+    <!-- Scripts -->
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+    <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
 
     <script>
-        // AOS
         AOS.init({ duration: 1000, once: true });
 
-        // Typed JS
-        new Typed(".typing-text", {
-            strings: ["Web Developer.", "UI/UX Designer.", "Full Stack Freelancer."],
+        var typed = new Typed(".typing-text", {
+            strings: ["Web Developer.", "UI/UX Designer.", "React Specialist.", "Full Stack Freelancer."],
             typeSpeed: 60,
             backSpeed: 40,
             loop: true
         });
 
-        // Cursor
         const cursor = document.querySelector('.cursor');
         document.addEventListener('mousemove', (e) => {
             cursor.style.left = e.clientX + 'px';
             cursor.style.top = e.clientY + 'px';
         });
 
-        // Nav Scroll
         window.addEventListener('scroll', () => {
             const nav = document.getElementById('navbar');
             if (window.scrollY > 50) {
                 nav.style.background = 'rgba(15, 23, 42, 0.95)';
+                nav.style.padding = '15px 8%';
             } else {
                 nav.style.background = 'transparent';
+                nav.style.padding = '20px 8%';
             }
         });
     </script>
